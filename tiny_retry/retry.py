@@ -11,7 +11,7 @@ def retry(func, *args, tries=3, delay=0.0, exceptions=(Exception,), **kwargs):
     :param exceptions: The specific exceptions that trigger a retry
     :param kwargs: Any keyword arguments for the function
 
-    This function returns the result of the function, if succesful. If not, it will raise the last exception it encountered.
+    This function returns the result of the function if successful. If not, it will raise the last exception it encountered.
     """
     if tries < 1:
         raise ValueError("Error: tries must be at least 1!")
@@ -22,4 +22,22 @@ def retry(func, *args, tries=3, delay=0.0, exceptions=(Exception,), **kwargs):
         except exceptions as exception:
             if attempt == tries - 1:
                 raise
+            time.sleep(delay)
+
+def retry_infinite(func, *args, delay=0.0, exceptions=(Exception,), **kwargs):
+    """
+    Documentation for retry_infinite
+    
+    :param func: The function to be called and retried
+    :param args: Any arguments for the function
+    :param delay: The delay between retries (in seconds)
+    :param exceptions: The specific exceptions that trigger a retry
+    :param kwargs: Any keyword arguments for the function
+
+    This function returns the result of the function if successful. If not, it will repeat infinitely until it succeeds.
+    """
+    while True:
+        try:
+            return func(*args, **kwargs)
+        except exceptions as exception:
             time.sleep(delay)
