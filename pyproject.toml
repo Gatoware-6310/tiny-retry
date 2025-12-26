@@ -1,6 +1,6 @@
 [project]
 name = "tiny-retry-gw"
-version = "0.2.0"
+version = "0.2.1"
 description = "A tiny retry helper for synchronous Python code."
 authors = [{ name = "Gatoware" }]
 license = { file = "LICENSE" }

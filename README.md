@@ -1,4 +1,4 @@
-# tiny-retry v0.2.0
+# tiny-retry v0.2.1
 
 `tiny-retry` is a tiny package for retrying (synchronous) Python functions when they raise exceptions, designed to keep things light and simple.
 
