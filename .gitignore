@@ -1,4 +1,5 @@
 __pycache__/
 tiny_retry.egg-info/
+tiny_retry_gw.egg-info/
 dist/
 .env
