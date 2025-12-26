@@ -14,7 +14,7 @@ pip install tiny-retry
 from tiny_retry import retry, retry_infinite
 
 def foo():
-    # Replace this stub with something that can raise the exception(s) you want to retry on.
+    # Replace this code with something that can raise the exception(s) you want to retry on.
     ...
 
 # This will try foo() 6 times, with a delay of 3.1 seconds between retries, and it will only retry when ConnectionError is raised.
