@@ -5,7 +5,7 @@
 ## Installation
 
 ```bash
-pip install tiny-retry
+pip install tiny-retry-gw
 ```
 
 ## Usage
