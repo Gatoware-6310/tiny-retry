@@ -23,17 +23,17 @@ result = retry(foo, tries=6, delay=3.10, exceptions=(ConnectionError,))
 
 ### Parameters
 
-- `func`: callable to invoke.
-- `tries`: how many times to attempt the call (must be >= 1).
-- `delay`: seconds to sleep between retries.
-- `exceptions`: tuple of exception classes that should trigger another attempt.
-- `*args`, `**kwargs`: optional positional and keyword arguments forwarded to `func`.
+- `func`: function to call.
+- `tries`: how many times to attempt the function (must be >= 1).
+- `delay`: delay in seconds between retries.
+- `exceptions`: a tuple of exceptions that should trigger another attempt.
+- `*args`, `**kwargs`: optional positional and keyword arguments to be passed into `func`.
 
 If all attempts fail, `retry` reraises the last exception so the caller can handle or log it.
 
 ## Development
 
-Run the simple smoke test from the repo root:
+Run the simple tests from the repo root:
 
 ```bash
 python -m pytest

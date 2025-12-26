@@ -5,7 +5,7 @@ def retry(func, *args, tries=3, delay=0.0, exceptions=(Exception,), **kwargs):
     Documentation for retry
     
     :param func: The function to be called and retried
-    :param args: Any arguments for the function
+    :param args: Any positional arguments for the function
     :param tries: The number of times the function to be tried
     :param delay: The delay between retries (in seconds)
     :param exceptions: The specific exceptions that trigger a retry

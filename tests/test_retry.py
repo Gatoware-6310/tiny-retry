@@ -1,5 +1,5 @@
 import pytest
-from tiny_retry import retry
+from tiny_retry import retry, retry_infinite
 
 
 def test_retry_succeeds_after_failures():
@@ -53,3 +53,16 @@ def test_retry_passes_args_and_kwargs():
 def test_retry_rejects_invalid_tries():
     with pytest.raises(ValueError):
         retry(lambda: 123, tries=0)
+
+
+def test_retry_infinite_eventually_succeeds():
+    state = {"n": 0}
+
+    def flaky():
+        state["n"] += 1
+        if state["n"] < 3:
+            raise ValueError("try again")
+        return "done"
+
+    assert retry_infinite(flaky, delay=0.0, exceptions=(ValueError,)) == "done"
+    assert state["n"] == 3
