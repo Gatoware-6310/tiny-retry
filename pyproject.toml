@@ -1,0 +1,14 @@
+[project]
+name = "tiny-retry"
+version = "0.1.0"
+description = "A tiny retry helper for synchronous Python code."
+authors = [{ name = "Gatoware" }]
+readme = "README.md"
+requires-python = ">=3.8"
+
+[project.urls]
+Homepage = "https://github.com/Gatoware-6310/tiny-retry"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
